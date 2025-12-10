@@ -1,15 +1,17 @@
 Month 1: Rust Fundamentals & Simple Interpreter
 Week 1: Rust Basics
 
-  done   Install Rust (rustup)
+  done -  Install Rust (rustup) - 10/12/2025
 
-  done  Complete "Hello World" and basic syntax
+  done - Complete "Hello World" and basic syntax - 10/12/25
 
-  done  Learn variables, data types, control flow
+  done - Learn variables, data types, control flow - 10/12/25
 
-  Pending  Complete Rustlings exercises 1-15
+  Pending -  Complete Rustlings exercises 1-15
 
-  done  Build: Simple CLI calculator
+  Pending - Build: Simple CLI calculator
+
+  Done - Read CS143 Lecture 1 - 10/12/25
 
 Week 2: Rust Core Concepts
 

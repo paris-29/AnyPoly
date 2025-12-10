@@ -3,8 +3,8 @@
 ## WEEK 1: LEXICAL ANALYSIS & RUST BASICS
 
 ### DAY 1: SETUP & INTRODUCTION
-[ ] Install Rust toolchain (rustup, cargo, rustc)
-[ ] Install VS Code with rust-analyzer extension
+[*] Install Rust toolchain (rustup, cargo, rustc)
+[*] Use Neovim - I use Arch BTW
 [ ] Create project: cargo new polyglot-task-system
 [ ] Watch CS143 Lecture 1: Introduction to Compilers
 [ ] Read Rust Book Chapter 1-2 (Getting Started)

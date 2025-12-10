@@ -1,317 +1,81 @@
-# MONTH 1 LEARNING PLAN: COMPILER THEORY + RUST + POLYGLOT TASK SYSTEM
+Month 1: Rust Fundamentals & Simple Interpreter
+Week 1: Rust Basics
 
-## WEEK 1: LEXICAL ANALYSIS & RUST BASICS
+  done   Install Rust (rustup)
 
-### DAY 1: SETUP & INTRODUCTION
-[*] Install Rust toolchain (rustup, cargo, rustc)
-[*] Use Neovim - I use Arch BTW
-[ ] Create project: cargo new polyglot-task-system
-[ ] Watch CS143 Lecture 1: Introduction to Compilers
-[ ] Read Rust Book Chapter 1-2 (Getting Started)
+  done  Complete "Hello World" and basic syntax
 
-### DAY 2: RUST SYNTAX FUNDAMENTALS
-[ ] Complete Rust Book Chapter 3 (Common Programming Concepts)
-[ ] Practice: Write simple Rust programs (calculator, string manipulator)
-[ ] Study: Regular Expressions theory from CS143
-[ ] Define token types for your .task format (on paper)
+  done  Learn variables, data types, control flow
 
-### DAY 3: TOKENIZATION THEORY
-[ ] Watch CS143 Lecture 2: Lexical Analysis Part 1
-[ ] Study: Finite Automata concepts
-[ ] Create token enum design for your task system
-[ ] List all possible tokens in .task format (metadata, code blocks, etc.)
+  Pending  Complete Rustlings exercises 1-15
 
-### DAY 4: BUILD SIMPLE LEXER
-[ ] Practice: Write tokenizer for arithmetic expressions in Rust
-[ ] Implement: Character-by-character scanning algorithm
-[ ] Design: Error reporting for lexical errors
-[ ] Test: Tokenize simple strings into tokens
+  done  Build: Simple CLI calculator
 
-### DAY 5: .TASK FORMAT LEXER DESIGN
-[ ] Design lexer for ```python ... ``` syntax
-[ ] Handle edge cases: nested quotes, escape sequences
-[ ] Implement language detection from backtick blocks
-[ ] Create test cases for lexer
+Week 2: Rust Core Concepts
 
-### DAY 6: COMPLETE LEXER IMPLEMENTATION
-[ ] Add support for metadata parsing (task_id = "value")
-[ ] Handle whitespace and comment skipping
-[ ] Add position tracking (line/column numbers)
-[ ] Write comprehensive lexer tests
+    Study ownership, borrowing, lifetimes
 
-### DAY 7: WEEK 1 REVIEW & INTEGRATION
-[ ] Review all CS143 Week 1 concepts
-[ ] Complete Rust Book Chapter 4 (Understanding Ownership)
-[ ] Integrate lexer into CLI tool
-[ ] Create example .task files for testing
+    Learn structs, enums, pattern matching
 
-## WEEK 2: PARSING & AST CONSTRUCTION
+    Understand traits and generics
 
-### DAY 8: CONTEXT-FREE GRAMMARS
-[ ] Watch CS143 Lecture 3: Parsing Introduction
-[ ] Study: Context-free grammar notation
-[ ] Write grammar for your .task format (BNF notation)
-[ ] Practice: Write grammar for simple expressions
+    Complete Rustlings exercises 16-40
 
-### DAY 9: RUST DATA STRUCTURES FOR PARSING
-[ ] Complete Rust Book Chapter 5 (Using Structs)
-[ ] Study: Recursive data structures in Rust (Box, Vec)
-[ ] Design AST node types for your task system
-[ ] Create enum hierarchy for different language blocks
+    Build: Simple todo list with file I/O
 
-### DAY 10: RECURSIVE DESCENT PARSING
-[ ] Watch CS143 Lecture 4: Top-Down Parsing
-[ ] Implement recursive descent parser for arithmetic expressions
-[ ] Study: LL(1) parsing tables
-[ ] Design parser interface for your task system
+Week 3: First Interpreter Steps
 
-### DAY 11: BUILD .TASK PARSER - PART 1
-[ ] Implement parser for metadata sections (key = value)
-[ ] Handle language block detection (```python ... ```)
-[ ] Parse simple .task files without dependencies
-[ ] Create parse tree visualization
+    Read Crafting Interpreters Chapters 1-4
 
-### DAY 12: BUILD .TASK PARSER - PART 2
-[ ] Add support for multiple code blocks in one file
-[ ] Implement error recovery in parser
-[ ] Handle mixed content (metadata, code, comments)
-[ ] Write parser unit tests
+    Build: Arithmetic expression evaluator (no variables)
 
-### DAY 13: ABSTRACT SYNTAX TREE DESIGN
-[ ] Watch CS143 Lecture 5: Abstract Syntax Trees
-[ ] Design complete AST structure for your task system
-[ ] Create visitor pattern for AST traversal
-[ ] Implement AST pretty printer
+    Implement: Lexer (tokenizer) for simple math
 
-### DAY 14: WEEK 2 INTEGRATION
-[ ] Connect lexer to parser (token stream → AST)
-[ ] Test full parsing pipeline on example files
-[ ] Complete Rust Book Chapter 6 (Enums and Pattern Matching)
-[ ] Document parser limitations and next steps
+    Implement: Parser (recursive descent) for AST
 
-## WEEK 3: SEMANTIC ANALYSIS & ERROR HANDLING
+    Implement: Interpreter that walks AST
 
-### DAY 15: SYMBOL TABLES
-[ ] Watch CS143 Lecture 6: Semantic Analysis
-[ ] Study: Symbol table data structures and scoping
-[ ] Design symbol table for task definitions
-[ ] Track: Task IDs, variables, dependencies
+    Add: REPL for your expression calculator
 
-### DAY 16: TYPE SYSTEMS & CHECKING
-[ ] Study: Type inference and checking algorithms
-[ ] Design type system for cross-language data passing
-[ ] Plan: How Python dict maps to Rust struct
-[ ] Create type representation in your system
+Week 4: Language Features & Project Setup
 
-### DAY 17: DEPENDENCY ANALYSIS
-[ ] Implement task dependency graph construction
-[ ] Study: Graph algorithms for compiler analysis
-[ ] Detect: Direct and transitive dependencies
-[ ] Plan: Circular dependency detection
+    Extend interpreter with variables
 
-### DAY 18: SEMANTIC ANALYZER IMPLEMENTATION
-[ ] Build semantic analyzer that walks AST
-[ ] Validate: All referenced tasks exist
-[ ] Check: No duplicate task IDs
-[ ] Verify: Language-specific constraints
+    Add: Print statements
 
-### DAY 19: CIRCULAR DEPENDENCY DETECTION
-[ ] Implement topological sort algorithm
-[ ] Detect and report circular dependencies
-[ ] Provide meaningful error messages
-[ ] Test with complex dependency graphs
+    Add: Support for multi-expression programs
 
-### DAY 20: ERROR REPORTING SYSTEM
-[ ] Complete Rust Book Chapter 9 (Error Handling)
-[ ] Design error types for different analysis phases
-[ ] Implement source code location tracking
-[ ] Create pretty error messages with context
+    Set up: Git repository for polyglot project
 
-### DAY 21: WEEK 3 INTEGRATION
-[ ] Connect semantic analyzer to parsing pipeline
-[ ] Test semantic analysis on example files
-[ ] Create comprehensive error test suite
-[ ] Review all semantic analysis concepts
+    Organize: Project structure (parser, interpreter modules)
 
-## WEEK 4: INTERMEDIATE REPRESENTATION & EXECUTION PLANNING
+    Test: Your simple language with sample programs
 
-### DAY 22: INTERMEDIATE REPRESENTATIONS
-[ ] Watch CS143 Lecture 7: Intermediate Representations
-[ ] Study: Three-address code and basic blocks
-[ ] Design Task IR (language-agnostic representation)
-[ ] Plan: AST → IR transformation
+    Document: Your language's grammar and usage
 
-### DAY 23: IR GENERATOR DESIGN
-[ ] Design IR generator that walks annotated AST
-[ ] Create IR operations for different task types
-[ ] Plan: Resource requirements in IR
-[ ] Design: Data flow between IR operations
+Weekly Checkpoints:
 
-### DAY 24: SCHEDULING ALGORITHMS
-[ ] Study: Compiler instruction scheduling algorithms
-[ ] Apply: Task scheduling with dependencies
-[ ] Design: Parallel execution detection
-[ ] Plan: Resource-constrained scheduling
+Week 1 Done: Can write basic Rust programs
+Week 2 Done: Understand memory safety concepts
+Week 3 Done: Have working expression calculator
+Week 4 Done: Have working "toy language" with variables
+Daily Time Commitment:
 
-### DAY 25: EXECUTION PLAN GENERATION
-[ ] Create execution plan data structure
-[ ] Generate linear execution order from dependency DAG
-[ ] Add: Timing estimates and resource allocation
-[ ] Plan: Fallback strategies for failures
+    Weekdays: 2 hours/day (coding + learning)
 
-### DAY 26: COMPLETE PIPELINE INTEGRATION
-[ ] Connect all components: Lexer → Parser → Analyzer → IR → Scheduler
-[ ] Create CLI interface: taskc process file.task
-[ ] Output: Execution plan visualization
-[ ] Test: End-to-end on sample .task files
+    Weekends: 4 hours/day (project work)
 
-### DAY 27: TESTING & VALIDATION
-[ ] Write integration tests for complete pipeline
-[ ] Create benchmark .task files
-[ ] Test edge cases: Empty files, malformed syntax
-[ ] Validate execution plans are correct
+    Total: ~18 hours/week
 
-### DAY 28: RUST ADVANCED CONCEPTS
-[ ] Complete Rust Book Chapter 10 (Generic Types, Traits, Lifetimes)
-[ ] Study: Visitor pattern implementation in Rust
-[ ] Review: Ownership patterns used in your code
-[ ] Plan: Performance optimizations for Month 2
+Success Criteria for Month 1:
 
-### DAY 29: PROJECT DOCUMENTATION
-[ ] Document your compiler pipeline architecture
-[ ] Create user guide for .task format
-- Write API documentation for your library
-[ ] Create development setup instructions
+    Can compile and run Rust programs
 
-### DAY 30: MONTH 1 REVIEW & MONTH 2 PLANNING
-[ ] Review all compiler concepts learned
-[ ] Assess project progress against goals
-[ ] Plan Month 2: Code execution and calendar integration
-[ ] Identify knowledge gaps to address in Month 2
+    Understand ownership/borrowing
 
-## SUPPLEMENTAL DAILY TASKS (EVERY DAY)
+    Have working simple language interpreter
 
-### MORNING STUDY (2 HOURS)
-[ ] Watch CS143 lecture or review concepts
-[ ] Read Rust Book chapter section
-[ ] Study one compiler algorithm in detail
+    Can parse and evaluate: let x = 5 + 3; print x;
 
-### AFTERNOON CODING (3 HOURS)
-[ ] Implement daily project task
-[ ] Write tests for new functionality
-- Refactor and improve existing code
-[ ] Commit changes to Git with descriptive messages
-
-### EVENING REVIEW (1 HOUR)
-[ ] Review code written that day
-[ ] Plan next day's tasks
-[ ] Study open-source compiler code (rustc, etc.)
-[ ] Participate in Rust/compiler communities
-
-## WEEKLY CHECKPOINTS
-
-### WEEK 1 CHECKPOINT (END OF DAY 7)
-[ ] Working lexer for .task format
-[ ] Basic Rust proficiency (Chapters 1-4)
-[ ] Understanding of lexical analysis concepts
-[ ] Test suite for tokenization
-
-### WEEK 2 CHECKPOINT (END OF DAY 14)
-[ ] Complete parser for .task files
-[ ] AST representation of tasks
-[ ] Rust structs/enums proficiency (Chapters 5-6)
-[ ] Parsing test suite with edge cases
-
-### WEEK 3 CHECKPOINT (END OF DAY 21)
-[ ] Semantic analyzer with dependency checking
-[ ] Error reporting system
-[ ] Circular dependency detection
-[ ] Rust error handling proficiency (Chapter 9)
-
-### WEEK 4 CHECKPOINT (END OF DAY 30)
-[ ] Complete compiler pipeline: source → execution plan
-[ ] IR generation and scheduling
-[ ] CLI tool that processes .task files
-[ ] Comprehensive test suite and documentation
-
-## RESOURCES TO CONSULT DAILY
-
-### COMPILER THEORY
-[ ] CS143 Lecture Notes
-[ ] "Compilers: Principles, Techniques, and Tools" (Dragon Book) relevant sections
-[ ] "Engineering a Compiler" reference
-[ ] Compiler design papers and articles
-
-### RUST PROGRAMMING
-[ ] The Rust Programming Language Book
-[ ] Rust by Example
-[ ] Rust Standard Library Documentation
-[ ] Rust Design Patterns
-
-### PROJECT SPECIFIC
-[ ] Your .task format specification document
-[ ] Example .task files you create
-[ ] Test cases and expected outputs
-[ ] Architecture diagrams and notes
-
-## ADJUSTMENT GUIDELINES
-
-### IF AHEAD OF SCHEDULE
-[ ] Add more test cases
-[ ] Implement additional .task format features
-[ ] Study advanced compiler optimizations
-[ ] Refactor code for better performance
-[ ] Add more detailed error messages
-
-### IF BEHIND SCHEDULE
-[ ] Focus on core functionality only
-[ ] Skip non-essential features
-[ ] Use simpler implementations first
-[ ] Ask for help in Rust/compiler communities
-[ ] Adjust schedule for next week
-
-### IF STUCK ON CONCEPT
-[ ] Re-watch CS143 lecture
-[ ] Read alternative explanations online
-[ ] Study reference implementations
-[ ] Break problem into smaller parts
-[ ] Write pseudocode before implementation
-
-## SUCCESS METRICS FOR MONTH 1
-
-### TECHNICAL SUCCESS
-[ ] Can parse example .task files correctly
-[ ] Detect and report syntax errors
-[ ] Identify circular dependencies
-[ ] Generate valid execution plans
-[ ] All tests pass
-
-### LEARNING SUCCESS
-[ ] Understand compiler pipeline stages
-[ ] Comfortable with Rust ownership model
-[ ] Can explain parsing algorithms
-[ ] Understand semantic analysis concepts
-[ ] Confident debugging compiler code
-
-### PROJECT SUCCESS
-[ ] Working end-to-end pipeline
-[ ] Clean, documented codebase
-[ ] Comprehensive test suite
-[ ] Clear documentation
-[ ] Ready for Month 2 features
-
-## MONTH 2 PREVIEW (TO MOTIVATE PROGRESS)
-
-### MONTH 2 GOALS
-[ ] Execute Python/Rust code blocks
-[ ] Integrate with Google Calendar API
-[ ] Add time tracking and estimation
-[ ] Build simple web interface
-[ ] Add more language support
-
-### LONG-TERM VISION REMINDER
-You are building a revolutionary task system where developers can write tasks in their preferred language, with automatic scheduling, AI optimization, and calendar integration. Month 1 gives you the compiler foundation that makes this possible.
-
----
-
-**REMEMBER**: Consistency beats intensity. 4 hours of focused work every day will get you much further than 12 hours of unfocused work once a week. Check off each task as you complete it, and celebrate weekly milestones!
+Start small. Complete each bracket. Don't skip ahead.
+Focus on understanding, not just completion.
